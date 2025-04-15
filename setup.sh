@@ -27,16 +27,4 @@ if command -v fc-cache &> /dev/null; then
   fc-cache -fv "$FONT_DIR"
 fi
 
-# wait for register the font to the terminal
-sleep 2
-
-# detect actual termianl profile
-PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
-PROFILE_PATH="org.gnome.Terminal.Legacy.Profile:/org/gnome/Terminal/Legacy/Profiles:/:$PROFILE_ID/"
-
-# set the font to the terminal
-FONT_NAME="JetBrainsMono Nerd Font Mono 12"
-gsettings set "$PROFILE_PATH" font "$FONT_NAME"
-gsettings set "$PROFILE_PATH" use-system-font false
-
-echo "font loaded in terminal"
+echo "font donwloaded in system"
