@@ -1,15 +1,16 @@
 sudo apt update
-sudo apt install -y git zsh curl neofetch
+sudo apt install -y zsh curl neofetch neovim
 
 if  [ "$SHELL" != *zsh ]; then
 	echo "changing the default shell to zsh"
 	chsh -s $(which zsh)
 fi
 
-# link the repository files to the machine
-ln -sf $(pwd)/.zshrc ~/.zshrc
-ln -sf $(pwd)/.gitconfig ~/.gitconfig
-ln -sf $(pwd)/neofetch/config.conf ~/.config/neofetch/config.conf
+# manage symbolic links with gnu stow
+stow git
+stow neofetch
+stow nvim
+stow zsh
 
 echo "files linked"
 
