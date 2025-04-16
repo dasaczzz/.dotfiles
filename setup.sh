@@ -1,8 +1,9 @@
 sudo apt update
-sudo apt install -y zsh curl neofetch neovim
+sudo apt install -y zsh curl neofetch neovim stow build-essential
 
 if  [ "$SHELL" != *zsh ]; then
 	echo "changing the default shell to zsh"
+	curl -s https://ohmyposh.dev/install.sh | bash -s
 	chsh -s $(which zsh)
 fi
 
