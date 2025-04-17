@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install -y zsh curl neofetch neovim stow build-essential
+sudo apt install -y zsh curl lf neovim neofetch stow build-essential
 
 if  [ "$SHELL" != *zsh ]; then
 	echo "changing the default shell to zsh"
