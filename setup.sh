@@ -1,10 +1,20 @@
+#!/bin/zsh
+#!/bin/bash
+
 sudo apt update
 sudo apt install -y zsh curl lf neovim neofetch stow build-essential
 
-if  [ "$SHELL" != *zsh ]; then
+# change the default shell to zsh
+if  [[ "$SHELL" != *zsh ]]; then
 	echo "changing the default shell to zsh"
 	curl -s https://ohmyposh.dev/install.sh | bash -s
 	chsh -s $(which zsh)
+fi
+
+# setting ssh key
+if [ ! -f "$SSH_KEY" ]; then
+  SSH_KEY="$HOME/.ssh/id_rsa"	
+  ssh-keygen -t ed25519 -C "118865516+dasaczzz@users.noreply.github.com" -f "$SSH_KEY"
 fi
 
 # manage symbolic links with gnu stow
@@ -12,7 +22,7 @@ stow git
 stow neofetch
 stow nvim
 stow zsh
-
+stow ssh
 echo "files linked"
 
 # download and unzip font folder
