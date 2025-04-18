@@ -1,8 +1,12 @@
-#!/bin/zsh
 #!/bin/bash
 
+sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
-sudo apt install -y zsh curl lf neovim neofetch stow build-essential
+sudo apt install -y zsh curl lf neovim neofetch stow build-essential nodejs npm
+
+# install oh-my-posh for the prompt
+export PATH=~/.local/bin:$PATH
+curl -s https://ohmyposh.dev/install.sh | bash -s
 
 # change the default shell to zsh
 if  [[ "$SHELL" != *zsh ]]; then
