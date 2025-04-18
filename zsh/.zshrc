@@ -1,7 +1,7 @@
 neofetch
 
 export TERM=xterm-256color
-export PATH=$PATH:/home/admin/.local/bin
+export PATH=$PATH:/home/dasaczzz/.local/bin
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
