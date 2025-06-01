@@ -1,4 +1,5 @@
 # dotfiles
+![result](/assets/result.png)
 This repo is my config for my ubuntu setup. The tools this repo sets are:
 - git user and alias
 - zsh
