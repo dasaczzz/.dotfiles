@@ -5,16 +5,16 @@ final_space = true
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
-  
+
   [[blocks.segments]]
-  type = 'executiontime'
-  style = 'plain'
-  foreground = 'yellow'
-  background = 'transparent'
-  template = '{{ div .Ms 1000}}s '
-  
-  [blocks.segments.properties]
-    threshold = 1000
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ div .Ms 1000 }}s'
+
+    [blocks.segments.properties]
+      threshold = 3000
 
 [[blocks]]
   type = 'prompt'
@@ -57,4 +57,4 @@ final_space = true
       '{{if eq .Code 0}}magenta{{end}}'
   ]
   background = 'transparent'
-  template = '〉'
+  template = '<b>〉</b>'
