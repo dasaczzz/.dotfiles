@@ -14,4 +14,6 @@ if ! grep -Fqx "$ZDOTDIR_LINE" /etc/zshenv 2>/dev/null; then
   echo "$ZDOTDIR_LINE" | sudo tee -a /etc/zshenv > /dev/null
 fi	
 
+stow .
+
 chsh -s "$(command -v zsh)"
