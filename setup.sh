@@ -27,7 +27,7 @@ ZDOTDIR_LINE='export ZDOTDIR="$HOME/.config/zsh"'
 
 if ! grep -Fqx "$ZDOTDIR_LINE" /etc/zshenv 2>/dev/null; then
   echo "$ZDOTDIR_LINE" | sudo tee -a /etc/zshenv > /dev/null
-fi	
+fi
 
 stow --no-folding .
 
